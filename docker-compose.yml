@@ -1,0 +1,17 @@
+services:
+  core:
+    build: .
+    ports:
+      - "127.0.0.1:8765:8765"   # 只绑定本地回环（TB-1）
+    volumes:
+      - pros-data:/data          # SQLite + 文件仓库（Source of Truth）
+    environment:
+      PROS_PROVIDER: ${PROS_PROVIDER:-mock}        # mock|deepseek|qwen|local|openai_compat
+      PROS_MODEL: ${PROS_MODEL:-}
+      PROS_BASE_URL: ${PROS_BASE_URL:-}
+      PROS_API_KEY: ${PROS_API_KEY:-}              # 密钥仅经环境注入，不落盘
+      PROS_OUTBOUND_ALLOWLIST: ${PROS_OUTBOUND_ALLOWLIST:-127.0.0.1,localhost}
+    restart: unless-stopped
+
+volumes:
+  pros-data:

@@ -1,0 +1,23 @@
+{
+  "name": "personal-resource-os-obsidian",
+  "version": "1.0.0",
+  "description": "Personal Resource OS —— Obsidian 薄宿主插件（自带轻量核心 + 可选连接 Python Core）",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "node esbuild.config.mjs production",
+    "typecheck": "tsc --noEmit",
+    "test": "node tests/run-tests.mjs",
+    "test:load": "node tests/smoke-load.mjs",
+    "verify": "npm run typecheck && npm run build && npm run test && npm run test:load"
+  },
+  "optionalDependencies": {
+    "@esbuild/win32-x64": "0.21.5"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.5",
+    "obsidian": "^1.5.7",
+    "typescript": "^5.4.5"
+  }
+}

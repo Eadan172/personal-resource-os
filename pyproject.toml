@@ -1,0 +1,19 @@
+[project]
+name = "personal-resource-os"
+version = "0.1.0"
+description = "Personal Resource OS — 本地事实源 + 独立 Agent Core + MCP Gateway"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+api = ["fastapi>=0.115", "uvicorn>=0.30"]
+dev = ["pytest>=8", "ruff", "mypy", "keyring"]
+media = ["yt-dlp", "imageio-ffmpeg"]          # P2：视频/音频下载与抽帧
+browser = ["playwright"]                       # P3：反爬网页渲染回退
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 110

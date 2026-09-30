@@ -1,0 +1,9 @@
+{
+  "id": "personal-resource-os",
+  "name": "Personal Resource OS",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "个人资源管家：采集网页/文档/视频链接，Agent 自动理解、分类、归纳并生成结构化笔记写入库；含 Inbox、检索、引用问答、任务中心、阶段总结、审批与审计。",
+  "author": "PROS",
+  "isDesktopOnly": false
+}
